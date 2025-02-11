@@ -40,7 +40,7 @@ jobs:
 
       - name: Validate test coverage
         run: |
-          coverage=$(curl -s "https://sonarcloud.io/api/measures/component?componentKey=group-twenty_authentication-service&metricKeys=coverage" | jq -r '.component.measures[0].value')
+          coverage=$(curl -s "https://sonarcloud.io/api/measures/component?componentKey=group-twenty_processor&metricKeys=coverage" | jq -r '.component.measures[0].value')
           echo "Test coverage: $coverage"
           if (( $(echo "$coverage >= 50" | bc -l) )); then
           echo "Test coverage is sufficient: $coverage%"
